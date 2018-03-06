@@ -96,7 +96,7 @@ class UploadActivity : AppCompatActivity() {
     private fun uploadVideo(id:String) {
         MediaManager.get()
                 .upload(uri)
-                .unsigned("ddsfdcvz")
+                .unsigned("UPLOAD_PRESET")
                 .option("resource_type", "video")
                 .option("public_id", id)
                 .callback(object : UploadCallback {

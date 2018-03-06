@@ -24,7 +24,7 @@
 
         <meta-data
             android:name="CLOUDINARY_URL"
-            android:value="cloudinary://@kingidee" />
+            android:value="cloudinary://@CLOUD_NAME" />
 
         <activity android:name=".UploadActivity"></activity>
     </application>
