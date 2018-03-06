@@ -9,7 +9,7 @@ import retrofit2.http.GET
 
 interface ApiInterface {
 
-    @GET("/video")
+    @GET("/videos")
     fun getVideos(): Call<Model>
 
 }

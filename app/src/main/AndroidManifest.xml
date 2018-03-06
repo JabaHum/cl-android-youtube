@@ -3,7 +3,7 @@
     package="com.example.android.youtubeapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".VideoApplication"
@@ -20,13 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".VideoActivity"></activity>
-
+        <activity android:name=".VideoActivity" />
 
         <meta-data
             android:name="CLOUDINARY_URL"
-            android:value="cloudinary://@kingidee"/>
+            android:value="cloudinary://@kingidee" />
 
+        <activity android:name=".UploadActivity"></activity>
     </application>
 
 </manifest>

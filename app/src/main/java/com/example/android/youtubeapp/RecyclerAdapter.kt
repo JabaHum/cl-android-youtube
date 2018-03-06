@@ -9,7 +9,7 @@ import android.widget.TextView
 import com.squareup.picasso.Picasso
 import java.util.*
 
-class RecyclerAdapter(listener:OnItemClickedListener ) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter(listener:OnItemClickedListener) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private var list: List<Resource> = ArrayList()
     var mListener:OnItemClickedListener = listener
@@ -25,13 +25,13 @@ class RecyclerAdapter(listener:OnItemClickedListener ) : RecyclerView.Adapter<Re
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.row_video, parent, false)
+        val view = inflater.inflate(R.layout.list_row, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) = holder.bind(list[position])
 
-    override fun getItemCount(): Int = 2
+    override fun getItemCount(): Int = list.size
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private var imageView:ImageView = itemView.findViewById(R.id.image_view)
