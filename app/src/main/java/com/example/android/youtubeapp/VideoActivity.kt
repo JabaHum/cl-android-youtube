@@ -9,10 +9,10 @@ import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
 import com.google.android.exoplayer2.source.ExtractorMediaSource
 import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
+import com.google.android.exoplayer2.ui.SimpleExoPlayerView
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
-import kotlinx.android.synthetic.main.activity_upload.*
 import kotlinx.android.synthetic.main.activity_video.*
 
 class VideoActivity : AppCompatActivity() {
@@ -21,11 +21,13 @@ class VideoActivity : AppCompatActivity() {
     lateinit var player: SimpleExoPlayer
     private var playbackPosition:Long = 0
     var currentWindow = 0
+    lateinit var exoPlayerView: SimpleExoPlayerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video)
         url = intent.getStringExtra("video_url")
+        //exoPlayerView = findViewById(R.id.exo_player_)
     }
 
     public override fun onResume() {
@@ -57,7 +59,7 @@ class VideoActivity : AppCompatActivity() {
 
         player  = ExoPlayerFactory.newSimpleInstance(this, trackSelector)
 
-        exo_player_upload_activity.player = player
+        exo_player_video_activity.player = player
 
         val dataSourceFactory = DefaultDataSourceFactory(this, Util.getUserAgent(this, "CLYoutube"))
         val extractorsFactory = DefaultExtractorsFactory()

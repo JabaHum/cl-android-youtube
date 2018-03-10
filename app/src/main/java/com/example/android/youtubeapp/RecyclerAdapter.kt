@@ -31,7 +31,7 @@ class RecyclerAdapter(listener:OnItemClickedListener) : RecyclerView.Adapter<Rec
 
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) = holder.bind(list[position])
 
-    override fun getItemCount(): Int = list.size
+    override fun getItemCount(): Int = 2
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private var imageView:ImageView = itemView.findViewById(R.id.image_view)

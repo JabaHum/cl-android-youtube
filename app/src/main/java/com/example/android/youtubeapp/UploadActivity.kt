@@ -111,6 +111,7 @@ class UploadActivity : AppCompatActivity() {
                     override fun onSuccess(requestId: String, resultData: Map<*, *>) {
                         dialog.dismiss()
                         Toast.makeText(this@UploadActivity, "Upload successful", Toast.LENGTH_LONG).show()
+                        finish()
                     }
 
                     override fun onError(requestId: String, error: ErrorInfo) {
