@@ -9,7 +9,9 @@ import android.provider.MediaStore
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.LinearLayoutManager.VERTICAL
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.OkHttpClient
 import retrofit2.Call
@@ -104,6 +106,10 @@ class MainActivity : AppCompatActivity(),RecyclerAdapter.OnItemClickedListener {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = RecyclerAdapter(this@MainActivity)
             videosAdapter = adapter as RecyclerAdapter
+            val mDividerItemDecoration = DividerItemDecoration(
+                    this@MainActivity, 1
+            )
+            addItemDecoration(mDividerItemDecoration)
         }
     }
 
